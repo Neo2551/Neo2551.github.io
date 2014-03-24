@@ -59,7 +59,7 @@ d3.json("data/computerSkills.json", function(error, graph) {
   var nodeEmpty = svgCS.append("g").selectAll(".node")
     .data(graph.nodes)
    .enter().append("circle")
-    .attr("class", "node")
+    .attr("class", "node circle")
     .style("fill-opacity", 1e-6)
     .attr("r", function(d) {return 20*Math.sqrt(d.xp);})
     .style("fill", function(d) { return color(d.value); })
