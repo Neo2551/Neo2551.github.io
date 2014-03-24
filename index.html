@@ -79,6 +79,50 @@
           display: none;
           }
 
+          rect {
+          fill: #000;
+          pointer-events: all;
+          }
+
+          .snowHearts{
+          fill: none;
+          }
+
+          circle {
+          fill: none;
+          stroke-width: 2.5px;
+          }
+
+          .slider .handle {
+          fill: #fff;
+          <!-- stroke: #000; -->
+          stroke-opacity: .5;
+          stroke-width: 1.25px;
+          pointer-events: none;
+          }
+
+          .axis {
+          font: 10px sans-serif;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+          }
+
+          .axis .domain {
+          fill: none;
+          stroke: #000;
+          stroke-opacity: .3;
+          stroke-width: 10px;
+          stroke-linecap: round;
+          }
+
+          .axis .halo {
+          fill: none;
+          stroke: #ddd;
+          stroke-width: 8px;
+          stroke-linecap: round;
+          }
+
           svg {margin-left:auto; margin-right: auto; display: block;}
           span.left {float:left;}
           span.right {float:right;}
@@ -256,58 +300,79 @@
             </div>
           </div>
         </div>
-		  </div>
-    
-		<!-- <\!-- Highlights Wrapper -\-> -->
-		<!-- 	<div class="wrapper wrapper-style3"> -->
-		<!-- 		<div class="title">The Endorsements</div> -->
-		<!-- 		<div class="container"> -->
-		<!-- 			<div class="row"> -->
-		<!-- 				<div class="12u"> -->
-							
-		<!-- 					<\!-- Highlights -\-> -->
-		<!-- 						<div id="highlights"> -->
-		<!-- 							<div> -->
-		<!-- 								<div class="row"> -->
-		<!-- 									<div class="4u"> -->
-		<!-- 										<section class="highlight highlight-one"> -->
-		<!-- 											<a href="http://fav.me/d59i3b3" class="image image-full"><img src="images/pic02.jpg" alt="" /></a> -->
-		<!-- 											<h3><a href="#">Aliquam diam consequat</a></h3> -->
-		<!-- 											<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p> -->
-		<!-- 											<ul class="actions"> -->
-		<!-- 												<li><a href="#" class="button button-style1">Learn More</a></li> -->
-		<!-- 											</ul> -->
-		<!-- 										</section> -->
-		<!-- 									</div> -->
-		<!-- 									<div class="4u"> -->
-		<!-- 										<section class="highlight highlight-two"> -->
-		<!-- 											<a href="http://fav.me/d4tqyby" class="image image-full"><img src="images/pic03.jpg" alt="" /></a> -->
-		<!-- 											<h3><a href="#">Nisl adipiscing sed lorem</a></h3> -->
-		<!-- 											<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p> -->
-		<!-- 											<ul class="actions"> -->
-		<!-- 												<li><a href="#" class="button button-style1">Learn More</a></li> -->
-		<!-- 											</ul> -->
-		<!-- 										</section> -->
-		<!-- 									</div> -->
-		<!-- 									<div class="4u"> -->
-		<!-- 										<section class="highlight highlight-three"> -->
-		<!-- 											<a href="http://fav.me/d5w2dot" class="image image-full"><img src="images/pic04.jpg" alt="" /></a> -->
-		<!-- 											<h3><a href="#">Mattis tempus lorem</a></h3> -->
-		<!-- 											<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p> -->
-		<!-- 											<ul class="actions"> -->
-		<!-- 												<li><a href="#" class="button button-style1">Learn More</a></li> -->
-		<!-- 											</ul> -->
-		<!-- 										</section> -->
-		<!-- 									</div> -->
-		<!-- 								</div> -->
-		<!-- 							</div> -->
-		<!-- 						</div> -->
-		<!-- 					<\!-- /Highlights -\-> -->							
-		<!-- 				</div> -->
-		<!-- 			</div> -->
-		<!-- 		</div> -->
-		<!-- 	</div> -->
-		<!-- <\!-- /Highlights Wrapper -\-> -->
+    </div>
+		<!-- Highlights Wrapper -->
+			<div class="wrapper wrapper-style3">
+				<div class="title">
+          <h3 class="fa fa-bar-chart-o"> Fun with plots</h3>
+        </div>
+				<div class="container">
+					<div class="row">
+						<div class="12u">
+					    <!-- Highlights -->
+					    <div id="highlights">
+						    <div>
+							    <div class="row">
+						        <div class="12u">
+                      <div>
+                      <section class="highlight highlight-one">
+                        <h3 class="4u highlight-one">Omg Hearts</h3>
+                        <p>Move your mouse over the black rectangle and see what happens!</p>
+					              <svg id="svgOmgHearts"></svg>
+                      </section>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="12u">
+                      <div>
+                      <section class="highlight highlight-one">
+                        <h3 class="4u highlight-one">Snow Hearts</h3>
+                        <p> A nice animation using d3.js. Move your mouse on the plot and see what happens! You can decrease the number of hearts with the slider! </p>
+					              <svg id="svgSnowHearts"></svg>
+                      </section>
+                      </div>
+                    </div>
+                   </div>
+
+
+                  <!-- <div class="row"> -->
+								  <!--   <div class="4u"> -->
+									<!-- 		<section class="highlight highlight-one"> -->
+									<!-- 			<a href="http://fav.me/d59i3b3" class="image image-full"><img src="images/pic02.jpg" alt="" /></a> -->
+									<!-- 			<h3><a href="#">Aliquam diam consequat</a></h3> -->
+									<!-- 			<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p> -->
+									<!-- 			<ul class="actions"> -->
+									<!-- 				<li><a href="#" class="button button-style1">Learn More</a></li> -->
+									<!-- 			</ul> -->
+									<!-- 		</section> -->
+									<!-- 	</div> -->
+									<!-- 	<div class="4u"> -->
+									<!-- 		<section class="highlight highlight-two"> -->
+									<!-- 			<a href="http://fav.me/d4tqyby" class="image image-full"><img src="images/pic03.jpg" alt="" /></a> -->
+									<!-- 			<h3><a href="#">Nisl adipiscing sed lorem</a></h3> -->
+									<!-- 			<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p> -->
+									<!-- 			<ul class="actions"> -->
+									<!-- 				<li><a href="#" class="button button-style1">Learn More</a></li> -->
+									<!-- 			</ul> -->
+									<!-- 		</section> -->
+									<!-- 	</div> -->
+									<!-- 	<div class="4u"> -->
+									<!-- 		<section class="highlight highlight-three"> -->
+									<!-- 			<a href="http://fav.me/d5w2dot" class="image image-full"><img src="images/pic04.jpg" alt="" /></a> -->
+									<!-- 			<h3><a href="#">Mattis tempus lorem</a></h3> -->
+									<!-- 			<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p> -->
+									<!-- 			<ul class="actions"> -->
+									<!-- 				<li><a href="#" class="button button-style1">Learn More</a></li> -->
+									<!-- 			</ul> -->
+									<!-- 		</section> -->
+								</div>
+							</div>
+							<!-- /Highlights -->							
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- /Highlights Wrapper -->
 
 		<!-- Footer Wrapper -->
 			<div id="footer-wrapper" class="wrapper">
@@ -379,12 +444,14 @@
 							<!-- /Copyright -->						
 						</div>
 					</div>
-				</div>
-			</div>
+        </div>
+      </div>
 		<!-- /Footer Wrapper -->
     <script type="text/javascript" src="js/createIntroButton.js"></script>
     <script type="text/javascript" src="js/computerSkills.js"></script>
     <script type="text/javascript" src="js/hardSkills.js"></script>
     <script type="text/javascript" src="js/includeProfessionalXp.js"></script>
+    <script type="text/javascript" src="js/omgHearts.js"></script>
+    <script type="text/javascript" src="js/heartsInteractive.js"></script>
 	</body>
 </html>
