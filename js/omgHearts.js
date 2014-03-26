@@ -11,35 +11,35 @@ $(function() {
     .append("rect")
     .attr("width", width)
     .attr("height", height)
-    .attr("z-index", "10")
+    .attr("z-index", "99")
     .on("ontouchstart" in document ? "touchmove" : "mousemove", plotHeart);
-  
+
   var i = 0;
-  var j = 0;
+  var j = 0;  
 
   function plotHeart() {
     
     var m = d3.mouse(this);
     
-    var hearts = svg;
+    var hearts = d3.select("#svgOmgHearts");
     var dat = [{"x" : m[0] , "y" : m[1] + 60}];
 
-    hearts.selectAll("svg").insert("path", "rect")
+    hearts.selectAll("svg")//.insert("path", "rect")
       .data(dat)
       .enter()
       .append("path")
-      .attr("transform", function(d) {return scaleFromCenter(d, 2);})
+      .attr("transform", function(d) {return scaleFromCenter(d, 0.5);})
       .attr("d", heartStr)
-      .attr("stroke", d3.hsl((i = (i + 1) % 20), 1, 
-                             0.4 + (j = (j + 1) % 40)/100))
+      .attr("stroke", d3.hsl((++i % 20), 1, 
+                             0.4 + (++j % 40)/100))
       .attr("stroke-width", 1.5)
       .attr("fill", "none")
-      .attr("z-index", "1")
+      .on("ontouchstart" in document ? "touchmove" : "mousemove", plotHeart)
       .transition()
-      .duration(2000)
-      .ease("sqrt")
+      .duration(3000)
+      .ease(Math.sqrt)
       .attr("transform", function(d) {
-        return scaleFromCenter(d, 10);})
+        return scaleFromCenter(d, 5);})
       .style("stroke-opacity", 1e-6)
       .remove();
     
