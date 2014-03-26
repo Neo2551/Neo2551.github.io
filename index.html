@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <!--
-	Escape Velocity 2.5 by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+	  Escape Velocity 2.5 by HTML5 UP
+	  html5up.net | @n33co
+	  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  -->
 <html>
 	<head>
 		<title>My honest CV</title>
@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="css/latex-style.css">
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
     <script src="js/d3.v3.min.js"></script>
-		<script src="js/nv.d3.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/config.js"></script>
@@ -24,193 +25,90 @@
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
-		</noscript>
-        <style type="text/css">
-     
-          .node circle {
-            cursor: pointer;
-            fill: #fff;
-            stroke: steelblue;
-            stroke-width: 1.5px;
-          }
-
-          .node text{
-            font-size: 11px;
-            font-color: #000;
-          }
-
-          .link {
-            fill: none;
-            stroke: #ccc;
-            stroke-width: 1.5px;
-          }
-
-          .d3-tip {
-            width : 400px;
-            line-height: 1;
-            font-weight: bold;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            border-radius: 2px;
-          }
-
-          .bar {
-          fill: steelblue;
-          }
-
-          .bar:hover {
-          fill: brown;
-          }
-
-          .axis path,
-          .axis line {
-          fill: none;
-          stroke: #000;
-          shape-rendering: crispEdges;
-          }
-
-          .y.axis path {
-          display: none;
-          }
-
-          rect {
-          fill: #000;
-          pointer-events: all;
-          }
-
-          .snowHearts{
-          fill: none;
-          }
-
-          circle {
-          fill: none;
-          stroke-width: 2.5px;
-          }
-
-          .slider .handle {
-          fill: #fff;
-          <!-- stroke: #000; -->
-          stroke-opacity: .5;
-          stroke-width: 1.25px;
-          pointer-events: none;
-          }
-          
-          .axis {
-          font: 10px sans-serif;
-          fill: #000;
-          }
-
-          .axis {
-          font: 10px sans-serif;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          user-select: none;
-          }
-
-          .axis .domain {
-          fill: none;
-          stroke: #000;
-          stroke-opacity: .3;
-          stroke-width: 10px;
-          stroke-linecap: round;
-          }
-
-          .axis .halo {
-          fill: none;
-          stroke: #ddd;
-          stroke-width: 8px;
-          stroke-linecap: round;
-          }
-
-          svg {margin-left:auto; margin-right: auto; display: block;}
-          span.left {float:left;}
-          span.right {float:right;}
-    </style>
+		</noscript>    
+		<link rel="stylesheet" href="css/colorbrewer.css" />
+    <link rel="stylesheet" href="css/d3-style.css" />
 	</head>
 	<body class="homepage">
 		<!-- Header Wrapper -->
-			<div id="header-wrapper" class="wrapper">
-			  <div class="container">
-					<div class="row">
-						<div class="12u">
-							<!-- Header -->
-								<div id="header">
-									<!-- Logo -->
-										<div id="logo">
-                      <br><br><br><br><br>
-											<h1>An honest interactive CV</h1>
-                      <br>
-											<!-- <span class="left">  -->
-                      <!--   <strong style='color:white'> During my job search, job candidates are told recruiters are looking for portfolios of projects to access their abilities. To support my job applications, this page shows fashion my resume in a funny and interactive and foremost the skills I consider I master. </strong> -->
-                      <!-- </span> -->
-										</div>
-									<!-- /Logo -->
-									
-									<!-- Nav -->
-										<nav id="nav">		
-											<ul id="navUl">
-											</ul>
-										</nav>
-									<!-- /Nav -->
-								</div>
-							<!-- /Header -->
+		<div id="header-wrapper" class="wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="12u">
+						<!-- Header -->
+						<div id="header">
+							<!-- Logo -->
+							<div id="logo">
+                <br><br><br><br><br>
+								<h1>An honest interactive CV</h1>
+                <br>
+							</div>
+							
+							<!-- Nav -->
+							<nav id="nav">		
+								<ul id="navUl">
+								</ul>
+							</nav>
+							<!-- /Nav -->
 						</div>
+						<!-- /Header -->
 					</div>
 				</div>
 			</div>
+		</div>
+
 		<!-- /Header Wrapper -->
 		<div id="intro-wrapper" class="wrapper wrapper-style1">
-				<div class="title">The Introduction</div>
-				<div class="container">
-					<div class="row">
-						<div class="12u">							
-							<!-- Intro -->
-								<section id="intro">
-									<p class="style1">So in case you were wondering what this is all about ...</p>
-									<p class="style2">
-										This is an honest resume  that I created to help me in my job search.
-									</p>
-									<p class="style1">It is <strong>trustworthy</strong>, <strong>verifiable</strong> and display my <strong>skills</strong>. 
-                    It is built on <strong>HTML5</strong>, <strong>CSS3</strong> and <strong>D3.js</strong>. Because of the interactivity, the website works best with Google Chrome.
+			<div class="title">The Introduction</div>
+			<div class="container">
+				<div class="row">
+					<div class="12u">							
+						<!-- Intro -->
+						<section id="intro">
+							<p class="style1">So in case you were wondering what this is all about ...</p>
+							<p class="style2">
+								This is an honest resume  that I created to help me in my job search.
+							</p>
+							<p class="style1">It is <strong>trustworthy</strong>, <strong>verifiable</strong> and display my <strong>skills</strong>. 
+                It is built on <strong>HTML5</strong>, <strong>CSS3</strong> and <strong>D3.js</strong>. Because of the interactivity, the website works best with Google Chrome.
 
-								</section>
-							<!-- /Intro -->							
-						</div>
+						</section>
+						<!-- /Intro -->							
 					</div>
 				</div>
 			</div>
+		</div>
 		<!-- /Intro Wrapper -->
-	
+	  
     <!-- Eduction Wrapper -->
     <div class="wrapper wrapper-style2">
       <div class="title" id="head-education"> 
         <h1 class="fa fa-book"> Education</h1>
       </div>
       <div class="container feature-list">
-		  	  <div class="row">
-						<div class="6u">
-							<section>
-								<h3 class="fa fa-certificate">University of Montreal, Montreal, 2012 </h3>
-                <p>
-                  MSc in Mathematics. <br>
-                  Lectures at HEC, McGill and Concordia. <br>
-                  GPA: 4.1/4.3, 95%. <br>
-                  Thesis in Statistics (Copulae) at ETHZ.
-                </p>
-							</section>
-            </div>
-						<div class="6u">
-              <section>
-								<h3 class="fa fa-certificate">EPFL, Lausanne, 2010</h3>
-								<p> 
-                  BSc in Mathematics. <br>
-                  Focus on numerical analysis. <br> 
-                  GPA (3rd year): 5.41/6, 90%. 
-                </p>
-							</section>
-            </div>
+		  	<div class="row">
+					<div class="6u">
+						<section>
+							<h3 class="fa fa-certificate">University of Montreal, Montreal, 2012 </h3>
+              <p>
+                MSc in Mathematics. <br>
+                Lectures at HEC, McGill and Concordia. <br>
+                GPA: 4.1/4.3, 95%. <br>
+                Thesis in Statistics (Copulae) at ETHZ.
+              </p>
+						</section>
           </div>
+					<div class="6u">
+            <section>
+							<h3 class="fa fa-certificate">EPFL, Lausanne, 2010</h3>
+							<p> 
+                BSc in Mathematics. <br>
+                Focus on numerical analysis. <br> 
+                GPA (3rd year): 5.41/6, 90%. 
+              </p>
+						</section>
+          </div>
+        </div>
       </div>
     </div>
 		<!-- Intro Wrapper -->
@@ -221,29 +119,29 @@
       <div id="intro-wrapper-prof"> </div>
     </div>	
 		<!-- Main Wrapper -->
-			<div class="wrapper wrapper-style2">
-				<div class="title" id="head-computer-skills">
-          <h1 class="feature-list fa fa-code"> Computer Skills</h1>
-        </div>
-				<div class="container">
-					<div class="row">
-						<div class="12u">							
-							<!-- Main -->
-								<div id="main">									
-									<!-- Image -->
-										<!-- <a href="http://fav.me/d5pjw3g" class="image image-featured"> -->
-										<!-- 	<img src="images/pic01.jpg" alt="" /> -->
-										<!-- </a> -->
-									<!-- /Image -->
-				          <header class="style1">
-					          <h4 class="style1">
-						          Drag the nodes, move your mouse on them or the links to get more details and double click on the nodes to see my approximate level of the language.
-                    <h4>
-				          </header>
+		<div class="wrapper wrapper-style2">
+			<div class="title" id="head-computer-skills">
+        <h1 class="feature-list fa fa-code"> Computer Skills</h1>
+      </div>
+			<div class="container">
+				<div class="row">
+					<div class="12u">							
+						<!-- Main -->
+						<div id="main">									
+							<!-- Image -->
+							<!-- <a href="http://fav.me/d5pjw3g" class="image image-featured"> -->
+							<!-- 	<img src="images/pic01.jpg" alt="" /> -->
+							<!-- </a> -->
+							<!-- /Image -->
+				      <header class="style1">
+					      <h4 class="style1">
+						      Drag the nodes, move your mouse on them or the links to get more details and double click on the nodes to see my approximate level of the language.
+                </h4>
+				      </header>
 
-									<section id="Computer Skills">
-                    <svg id='svgComputerSkills'> </svg>
-                  </section> 
+							<section id="Computer Skills">
+                <svg id='svgComputerSkills'> </svg>
+              </section> 
 						</div>
 					</div>
 				</div>
@@ -251,23 +149,24 @@
 
       <div class="wrapper wrapper-style3">
 				<div class="title" id="head-hardskills">
-            <h1 class="feature-list fa fa-code-fork"> Hard Skills</h1>
+          <h1 class="feature-list fa fa-code-fork"> Hard Skills</h1>
         </div>
 				<div class="container">
 					<div class="row">
 						<div class="12u">							
 							<!-- Main -->
-								<div id="main">									
-									<section id="Hard Skills">
-                    <svg id='svgHardSkills'> </svg>
-                  </section> 
-                </div>
+							<div id="main">									
+								<section id="Hard Skills">
+                  <svg id='svgHardSkills'> </svg>
+                </section> 
+              </div>
             </div>
           </div>
         </div>
       </div>
 
 		  <!-- /Main Wrapper -->
+      <!-- Language Wrapper -->
 		  <div class="wrapper wrapper-style2">
 			  <div class="title" id="head-languages">
           <h3 class="feature-list fa fa-comments"> Languages</h3>  
@@ -300,8 +199,9 @@
             </div>
           </div>
         </div>
-    </div>
-		<!-- Highlights Wrapper -->
+      </div>
+
+		  <!-- Highlights Wrapper -->
 			<div class="wrapper wrapper-style3">
 				<div class="title">
           <h3 class="fa fa-bar-chart-o"> Fun with plots</h3>
@@ -315,137 +215,115 @@
 							    <div class="row">
 						        <div class="12u">
                       <div>
-                      <section class="highlight highlight-one">
-                        <h3 class="4u highlight-one">Omg Hearts</h3>
-                        <p>Move your mouse over the black rectangle and see what happens!</p>
-					              <svg id="svgOmgHearts"></svg>
-                      </section>
+                        <section class="highlight highlight-one">
+                          <h3 class="4u highlight-one">Omg Hearts</h3>
+                          <p>Move your mouse over the black rectangle and see what happens!</p>
+					                <svg id="svgOmgHearts"></svg>
+                        </section>
                       </div>
                     </div>
                     <hr>
                     <div class="12u">
                       <div>
-                      <section class="highlight highlight-one">
-                        <h3 class="4u highlight-one">Heart flakes</h3>
-                        <p> A nice animation using d3.js. Move your mouse on the plot and see what happens! You can decrease the number of hearts with the slider! </p>
-					              <svg id="svgSnowHearts"></svg>
-                      </section>
+                        <section class="highlight highlight-one">
+                          <h3 class="4u highlight-one">Heart flakes</h3>
+                          <p> A nice animation using d3.js. Move your mouse on the plot and see what happens! You can decrease the number of hearts with the slider! </p>
+					                <svg id="svgSnowHearts"></svg>
+                        </section>
                       </div>
                     </div>
-                   </div>
-
-
-                  <!-- <div class="row"> -->
-								  <!--   <div class="4u"> -->
-									<!-- 		<section class="highlight highlight-one"> -->
-									<!-- 			<a href="http://fav.me/d59i3b3" class="image image-full"><img src="images/pic02.jpg" alt="" /></a> -->
-									<!-- 			<h3><a href="#">Aliquam diam consequat</a></h3> -->
-									<!-- 			<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p> -->
-									<!-- 			<ul class="actions"> -->
-									<!-- 				<li><a href="#" class="button button-style1">Learn More</a></li> -->
-									<!-- 			</ul> -->
-									<!-- 		</section> -->
-									<!-- 	</div> -->
-									<!-- 	<div class="4u"> -->
-									<!-- 		<section class="highlight highlight-two"> -->
-									<!-- 			<a href="http://fav.me/d4tqyby" class="image image-full"><img src="images/pic03.jpg" alt="" /></a> -->
-									<!-- 			<h3><a href="#">Nisl adipiscing sed lorem</a></h3> -->
-									<!-- 			<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p> -->
-									<!-- 			<ul class="actions"> -->
-									<!-- 				<li><a href="#" class="button button-style1">Learn More</a></li> -->
-									<!-- 			</ul> -->
-									<!-- 		</section> -->
-									<!-- 	</div> -->
-									<!-- 	<div class="4u"> -->
-									<!-- 		<section class="highlight highlight-three"> -->
-									<!-- 			<a href="http://fav.me/d5w2dot" class="image image-full"><img src="images/pic04.jpg" alt="" /></a> -->
-									<!-- 			<h3><a href="#">Mattis tempus lorem</a></h3> -->
-									<!-- 			<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p> -->
-									<!-- 			<ul class="actions"> -->
-									<!-- 				<li><a href="#" class="button button-style1">Learn More</a></li> -->
-									<!-- 			</ul> -->
-									<!-- 		</section> -->
-								</div>
+                  </div>
+                  <hr>
+                  <div class="12u">
+                    <div>
+                      <section class="highlight highlight-one">
+                        <h3 class="4u highlight-one">Zurich Referendum Chloropeth</h3>
+                        <p> A cholorpeth of Zurich, showing the accpetance rate of the Swiss referendum in massive immigartion on the 9th of February 2014.</p>
+					              <svg id="svgZhVotes"></svg>
+                      </section>
+                    </div>
+                  </div>
+                </div>
 							</div>
-							<!-- /Highlights -->							
 						</div>
+						<!-- /Highlights -->							
 					</div>
 				</div>
 			</div>
 		<!-- /Highlights Wrapper -->
 
 		<!-- Footer Wrapper -->
-			<div id="footer-wrapper" class="wrapper">
-				<div class="title">Contact</div>
-				<div class="container">
-					<div class="row">
-						<div class="12u">
-							<!-- Footer -->
-								<div id="footer">
-									<header class="style1">
-										<h2>Did I raise your interest?</h2>
-										<p class="byline">
-                      Feel free to contact me.
-										</p>
-									</header>
-                  <br/> <br/>
-                  <div class="feature-list feature-list-small">
-										<div class="row">
-											<div class="3u">
-												<section>
-													<h3 class="fa fa-comment">Social</h3>
-													<p>
-                            <div class="fa fa-linkedin-square"> <a href="http://ch.linkedin.com/in/davidpham87/"> LinkedIn</a></div>
-														<div class="fa fa-twitter-square"> <a href="http://twitter.com/LittleFunnyGeek"> @LittleFunnyGeek</a> </div>
-														<div class="fa fa-google-plus-square"> <a href="http://littlegeekland.blogspot.com"> Blog</a></div>
-														<div class="fa fa-facebook-square"> <a href="http://www.facebook.com/davidpham87"> Facebook</a></div>
-													</p>
-												</section>
-											</div>
-											<div class="3u">
-												<section>
-													<h3 class="fa fa-envelope">Email</h3>
-													<p>
-														<div class="fa fa-envelope-o"> <a href="mailto:davidpham87@gmail.com">davidpham87@gmail.com </a></div>
-													</p>
-												</section>
-											</div>
-											<div class="3u">
-												<section>
-													<h3 class="fa fa-phone">Phone</h3>
-													<p>
-														On demand.
-													</p>
-												</section>
-											</div>
-											<div class="3u">
-												<section>
-													<h3 class="fa fa-home">Mailing Address</h3>
-													<p>
-                            On demand.
-														<!-- 6 Gusatv- <br/> -->
-														<!-- 1234 Somewhere Rd #987<br/> -->
-														<!-- Nashville, TN 00000-0000 -->
-													</p>
-												</section>
-											</div>
-										</div>
+		<div id="footer-wrapper" class="wrapper">
+			<div class="title">Contact</div>
+			<div class="container">
+				<div class="row">
+					<div class="12u">
+						<!-- Footer -->
+						<div id="footer">
+							<header class="style1">
+								<h2>Did I raise your interest?</h2>
+								<p class="byline">
+                  Feel free to contact me.
+								</p>
+							</header>
+              <br/> <br/>
+              <div class="feature-list feature-list-small">
+								<div class="row">
+									<div class="3u">
+										<section>
+											<h3 class="fa fa-comment">Social</h3>
+											<p>
+                        <div class="fa fa-linkedin-square"> <a href="http://ch.linkedin.com/in/davidpham87/"> LinkedIn</a></div>
+												<div class="fa fa-twitter-square"> <a href="http://twitter.com/LittleFunnyGeek"> @LittleFunnyGeek</a> </div>
+												<div class="fa fa-google-plus-square"> <a href="http://littlegeekland.blogspot.com"> Blog</a></div>
+												<div class="fa fa-facebook-square"> <a href="http://www.facebook.com/davidpham87"> Facebook</a></div>
+											</p>
+										</section>
 									</div>
-									<hr />
+									<div class="3u">
+										<section>
+											<h3 class="fa fa-envelope">Email</h3>
+											<p>
+												<div class="fa fa-envelope-o"> <a href="mailto:davidpham87@gmail.com">davidpham87@gmail.com </a></div>
+											</p>
+										</section>
+									</div>
+									<div class="3u">
+										<section>
+											<h3 class="fa fa-phone">Phone</h3>
+											<p>
+												On demand.
+											</p>
+										</section>
+									</div>
+									<div class="3u">
+										<section>
+											<h3 class="fa fa-home">Mailing Address</h3>
+											<p>
+                        On demand.
+												<!-- 6 Gusatv- <br/> -->
+												<!-- 1234 Somewhere Rd #987<br/> -->
+												<!-- Nashville, TN 00000-0000 -->
+											</p>
+										</section>
+									</div>
 								</div>
-							<!-- /Footer -->
-
-							<!-- Copyright -->
-								<div id="copyright">
-									<span>
-										&copy; 2014, David Pham.
-									</span>
-								</div>
-							<!-- /Copyright -->						
+							</div>
+							<hr />
 						</div>
+						<!-- /Footer -->
+
+						<!-- Copyright -->
+						<div id="copyright">
+							<span>
+								&copy; 2014, David Pham.
+							</span>
+						</div>
+						<!-- /Copyright -->						
 					</div>
-        </div>
+				</div>
       </div>
+    </div>
 		<!-- /Footer Wrapper -->
     <script type="text/javascript" src="js/createIntroButton.js"></script>
     <script type="text/javascript" src="js/computerSkills.js"></script>
@@ -453,5 +331,6 @@
     <script type="text/javascript" src="js/includeProfessionalXp.js"></script>
     <script type="text/javascript" src="js/omgHearts.js"></script>
     <script type="text/javascript" src="js/heartsInteractive.js"></script>
+    <script type="text/javascript" src="js/zhVotes.js"></script>
 	</body>
 </html>

@@ -64,7 +64,7 @@ $(function(){
       });
     xp.append("hr").append("br");
     
-    addToolTip(xp);
+    addToolTip(xp.selectAll("h3"));
 
     function addToolTip(g){
       g.on("mouseover", 
