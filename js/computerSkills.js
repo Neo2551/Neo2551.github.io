@@ -116,7 +116,7 @@ d3.json("data/computerSkills.json", function(error, graph) {
            } 
            tooltipCs.html(htmlText);      
            return tooltipCs.style("visibility", "visible");})
-	    .on("mousemove", function(){return tooltipCs.style("top", (event.pageY-100)+"px").style("left",(event.pageX+20)+"px");})
+	    .on("mousemove", function(){return tooltipCs.style("top", (d3.event.pageY-100)+"px").style("left",(d3.event.pageX+20)+"px");})
 	    .on("mouseout", function(){return tooltipCs.style("visibility", "hidden");})
       .on("dblclick", function(d){
         window.open(d.levelUrl);

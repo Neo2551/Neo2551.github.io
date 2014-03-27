@@ -75,7 +75,7 @@ $(function(){
            htmlText = '<font color="red">' + d.subject + "</font><br>" + d.desc;
            tooltipHs.html(htmlText);      
            return tooltipHs.style("visibility", "visible");})
-	    .on("mousemove", function(){return tooltipHs.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+	    .on("mousemove", function(){return tooltipHs.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
 	    .on("mouseout", function(){return tooltipHs.style("visibility", "hidden");})
     }
   });

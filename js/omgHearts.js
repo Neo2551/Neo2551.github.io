@@ -4,14 +4,12 @@ $(function() {
     height = Math.min(500, innerHeight);
 
   var svg = d3.select("#svgOmgHearts")
-  
-  svg
+    .attr("width", width)
+    .attr("height", height);
+    
+  svg.append("rect")
     .attr("width", width)
     .attr("height", height)
-    .append("rect")
-    .attr("width", width)
-    .attr("height", height)
-    .attr("z-index", "99")
     .on("ontouchstart" in document ? "touchmove" : "mousemove", plotHeart);
 
   var i = 0;
@@ -21,40 +19,19 @@ $(function() {
     
     var m = d3.mouse(this);
     
-    var hearts = d3.select("#svgOmgHearts");
-    var dat = [{"x" : m[0] , "y" : m[1] + 60}];
+    // var hearts = svg;
+    var dat = {"x" : m[0] , "y" : m[1] + 60};
 
-    hearts.selectAll("svg")//.insert("path", "rect")
-      .data(dat)
-      .enter()
-      .append("path")
-      .attr("transform", function(d) {return scaleFromCenter(d, 0.5);})
-      .attr("d", heartStr)
-      .attr("stroke", d3.hsl((++i % 20), 1, 
-                             0.4 + (++j % 40)/100))
-      .attr("stroke-width", 1.5)
-      .attr("fill", "none")
-      .on("ontouchstart" in document ? "touchmove" : "mousemove", plotHeart)
-      .transition()
-      .duration(3000)
-      .ease(Math.sqrt)
-      .attr("transform", function(d) {
-        return scaleFromCenter(d, 5);})
-      .style("stroke-opacity", 1e-6)
-      .remove();
-    
-    d3.event.preventDefault();
-
-    function translate(d, a){
+    var translate = function(d, a){
       return "translate(" + a*d.x + "," + a*(d.y - 60) + ")";
     }
 
-    function scaleFromCenter(d, scaleFact) {
+    var scaleFromCenter = function(d, scaleFact) {
       return translate(d, a = 1) + "scale(" + scaleFact + ")" + 
         translate(d, a = -1);
     }
 
-    function heartStr(d){                
+    var  heartStr = function(d){                
       return ["M" + d.x + " " + (+d.y - 15),
               "c 3 -30 10 -35 20 -40",
               "s 30 -20 20 -35",
@@ -67,7 +44,23 @@ $(function() {
               "Z"].join();
     }
 
-    function x(d) { return d.x; }
-    function y(d) { return d.y; }
+    var x = function(d) { return d.x; }
+    var y = function(d) { return d.y; }
+
+    svg.insert("path", "rect")
+      .attr("transform", function() {return scaleFromCenter(dat, 0.5);})
+      .attr("d", function() {return heartStr(dat);})
+      .attr("stroke", d3.hsl((++i % 20), 1, 0.4 + (++j % 40)/100))
+      .attr("stroke-width", 1.5)
+      .attr("fill", "none")
+     .transition()
+      .duration(3000)
+      .ease(Math.sqrt)
+      .attr("transform", function() {
+        return scaleFromCenter(dat, 5);})
+      .style("stroke-opacity", 1e-6)
+      .remove();
+    
+    d3.event.preventDefault();
   }
 });

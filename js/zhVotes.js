@@ -42,7 +42,7 @@ $(function(){
 
     var x = d3.scale.linear()
       .domain([30, 70])
-      .range([0, 280]);
+      .range([0, height*0.8]);
 
     var xAxis = d3.svg.axis()
       .scale(x)
@@ -57,7 +57,7 @@ $(function(){
     key.append("rect")
       .attr("x", -10)
       .attr("y", -10)
-      .attr("width", 310)
+      .attr("width", height*0.85)
       .attr("height", 40)
       .style("fill", "white")
       .style("fill-opacity", 0.5)
@@ -183,7 +183,7 @@ $(function(){
           .html(htmlInsideTooltipFn(d,i))
           .style("visibility", "visible")
         return true;})
-	      .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+	      .on("mousemove", function(){return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
 	      .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
     }
 

@@ -52,7 +52,7 @@
 }
 
 rect {
-    fill: #000;
+    fill: none;
     pointer-events: all;
 }
 
@@ -104,6 +104,10 @@ svg {
     margin-left:auto;
     margin-right: auto;
     display: block;
+}
+
+#svgOmgHearts {
+    background: #000;
 }
 
 span.left {

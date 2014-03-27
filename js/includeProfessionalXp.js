@@ -56,6 +56,7 @@ $(function(){
           .html(function(d) {return " " + d.job_date + "<br>";})
         d3.select(this).append("br")
       });
+
     xp.append("br")
     xp.append("p")    
       .attr("class", "fa fa-star")
@@ -64,19 +65,19 @@ $(function(){
       });
     xp.append("hr").append("br");
     
-    addToolTip(xp.selectAll("h3"));
-
-    function addToolTip(g){
+    var addToolTip = function(g){
       g.on("mouseover", 
          function(d){
-           console.log(d.company_name);
            tooltipJob.html(jobDesc[d.company_name]);      
            return tooltipJob.style("visibility", "visible");})
-	    .on("mousemove", function(){return tooltipJob.style("top", (event.pageY-100)+"px").style("left",(event.pageX+20)+"px");})
+	    .on("mousemove", function(){return tooltipJob.style("top", (d3.event.pageY-100)+"px").style("left",(d3.event.pageX+20)+"px");})
 	    .on("mouseout", 
           function(){
             return tooltipJob.style("visibility", "hidden");
           });
-    };    
+    };
+
+    addToolTip(xp.selectAll("h3"));
+    
   });
 });

@@ -125,33 +125,30 @@ $(function(){
     
     // var m = d3.mouse(this);
     var m = [Math.random()*width, Math.random()*height];
-    var hearts = d3.select("#svgSnowHearts");
-    var dat = [{"x" : m[0] , "y" : m[1]}];
+    var hearts = d3.select("#svgSnowHearts g");
+    var dat = {"x" : m[0] , "y" : m[1]};
     var angle = Math.random()*360;
     
-    hearts.selectAll("svg").insert("path", "rect")
-      .data(dat)
-      .enter()
-      .append("path")
+    hearts.insert("path", "rect")
       .attr("transform", 
-            function(d) {
-              return scaleFromCenter(d, 0.1, angle);
+            function() {
+              return scaleFromCenter(dat, 0.1, angle);
             })
-      .attr("d", heartStr)
+      .attr("d", function(){return heartStr(dat);})
       .attr("stroke", d3.hsl((++i % 360), 1, 
-                             0.4 + (++j % 20)/100))
+                             0.45 + (++j % 10)/100))
       .attr("stroke-width", 1.5)
       .attr("fill", "none")
       .transition()
       .duration(4000)
       .ease(Math.log)
-      .attr("transform", function(d) {
-        return scaleFromCenter(d, 1, angle-Math.random()*60+30);})
+      .attr("transform", function() {
+        return scaleFromCenter(dat, 1, angle-Math.random()*60+30);})
       .style("stroke-opacity", 1e-6)
       .remove();
     
     handle.attr("stroke", d3.hsl((i % 360), 1, 
-                                 0.4 + (j % 20)/100));
+                                 0.45 + (j % 10)/100));
 
     d3.event.preventDefault();
   }
